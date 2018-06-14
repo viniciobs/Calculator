@@ -154,7 +154,7 @@
             // 
             // buttonZero
             // 
-            this.buttonZero.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonZero.BackColor = System.Drawing.SystemColors.ControlLight;
             this.buttonZero.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonZero.ForeColor = System.Drawing.Color.Gray;
             this.buttonZero.Location = new System.Drawing.Point(17, 213);
@@ -167,7 +167,7 @@
             // 
             // buttonThree
             // 
-            this.buttonThree.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonThree.BackColor = System.Drawing.SystemColors.ControlLight;
             this.buttonThree.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonThree.ForeColor = System.Drawing.Color.Gray;
             this.buttonThree.Location = new System.Drawing.Point(201, 164);
@@ -180,7 +180,7 @@
             // 
             // buttonTwo
             // 
-            this.buttonTwo.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonTwo.BackColor = System.Drawing.SystemColors.ControlLight;
             this.buttonTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTwo.ForeColor = System.Drawing.Color.Gray;
             this.buttonTwo.Location = new System.Drawing.Point(109, 164);
@@ -193,7 +193,7 @@
             // 
             // buttonOne
             // 
-            this.buttonOne.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonOne.BackColor = System.Drawing.SystemColors.ControlLight;
             this.buttonOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOne.ForeColor = System.Drawing.Color.Gray;
             this.buttonOne.Location = new System.Drawing.Point(17, 164);
@@ -218,7 +218,7 @@
             // 
             // buttonNine
             // 
-            this.buttonNine.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonNine.BackColor = System.Drawing.SystemColors.ControlLight;
             this.buttonNine.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNine.ForeColor = System.Drawing.Color.Gray;
             this.buttonNine.Location = new System.Drawing.Point(201, 67);
@@ -231,7 +231,7 @@
             // 
             // buttonEight
             // 
-            this.buttonEight.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonEight.BackColor = System.Drawing.SystemColors.ControlLight;
             this.buttonEight.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEight.ForeColor = System.Drawing.Color.Gray;
             this.buttonEight.Location = new System.Drawing.Point(109, 67);
@@ -244,7 +244,7 @@
             // 
             // buttonSeven
             // 
-            this.buttonSeven.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonSeven.BackColor = System.Drawing.SystemColors.ControlLight;
             this.buttonSeven.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSeven.ForeColor = System.Drawing.Color.Gray;
             this.buttonSeven.Location = new System.Drawing.Point(17, 67);
@@ -269,7 +269,7 @@
             // 
             // buttonSix
             // 
-            this.buttonSix.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonSix.BackColor = System.Drawing.SystemColors.ControlLight;
             this.buttonSix.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSix.ForeColor = System.Drawing.Color.Gray;
             this.buttonSix.Location = new System.Drawing.Point(201, 115);
@@ -282,7 +282,7 @@
             // 
             // buttonFive
             // 
-            this.buttonFive.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonFive.BackColor = System.Drawing.SystemColors.ControlLight;
             this.buttonFive.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFive.ForeColor = System.Drawing.Color.Gray;
             this.buttonFive.Location = new System.Drawing.Point(109, 115);
@@ -295,7 +295,7 @@
             // 
             // buttonFour
             // 
-            this.buttonFour.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonFour.BackColor = System.Drawing.SystemColors.ControlLight;
             this.buttonFour.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFour.ForeColor = System.Drawing.Color.Gray;
             this.buttonFour.Location = new System.Drawing.Point(17, 115);

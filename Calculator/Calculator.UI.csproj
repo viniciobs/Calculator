@@ -79,9 +79,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CalculatorEntities\CalculatorEnums.csproj">
+    <ProjectReference Include="..\CalculatorEntities\Calculator.Enums.csproj">
       <Project>{b16d2679-cb7c-44cf-affd-e6026dbe6369}</Project>
-      <Name>CalculatorEnums</Name>
+      <Name>Calculator.Enums</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

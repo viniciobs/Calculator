@@ -7,7 +7,7 @@ namespace Calculator
 
     /// <summary>
     /// Formuláio principal contendo as funcionalidades da calculadora.
-    /// Nesse código é chamado de membro os botões da calculadora.
+    /// Nesse código, os botões da calculadora são chamados de membros.
     /// </summary>
 
     #endregion Documentation
