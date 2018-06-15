@@ -52,13 +52,15 @@
             this.buttonSquirt = new System.Windows.Forms.Button();
             this.buttonPercent = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.panelLabelHolder = new System.Windows.Forms.Panel();
             this.panelVisor.SuspendLayout();
             this.panelKeyBoard.SuspendLayout();
+            this.panelLabelHolder.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelVisor
             // 
-            this.panelVisor.Controls.Add(this.labelHolder);
+            this.panelVisor.Controls.Add(this.panelLabelHolder);
             this.panelVisor.Controls.Add(this.textBoxMain);
             this.panelVisor.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelVisor.Location = new System.Drawing.Point(0, 0);
@@ -69,11 +71,13 @@
             // labelHolder
             // 
             this.labelHolder.AutoSize = true;
-            this.labelHolder.Location = new System.Drawing.Point(265, 18);
+            this.labelHolder.Dock = System.Windows.Forms.DockStyle.Right;
+            this.labelHolder.Location = new System.Drawing.Point(335, 0);
             this.labelHolder.Name = "labelHolder";
-            this.labelHolder.Size = new System.Drawing.Size(110, 13);
+            this.labelHolder.Size = new System.Drawing.Size(29, 13);
             this.labelHolder.TabIndex = 1;
-            this.labelHolder.Text = "só para eu a enxergar";
+            this.labelHolder.Text = "label";
+            this.labelHolder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBoxMain
             // 
@@ -126,6 +130,7 @@
             this.buttonSum.TabIndex = 18;
             this.buttonSum.Text = "+";
             this.buttonSum.UseVisualStyleBackColor = false;
+            this.buttonSum.Click += new System.EventHandler(this.buttonSum_Click);
             // 
             // buttonEqual
             // 
@@ -358,6 +363,14 @@
             this.buttonClear.UseVisualStyleBackColor = false;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
+            // panelLabelHolder
+            // 
+            this.panelLabelHolder.Controls.Add(this.labelHolder);
+            this.panelLabelHolder.Location = new System.Drawing.Point(17, 16);
+            this.panelLabelHolder.Name = "panelLabelHolder";
+            this.panelLabelHolder.Size = new System.Drawing.Size(364, 15);
+            this.panelLabelHolder.TabIndex = 2;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,6 +388,8 @@
             this.panelVisor.ResumeLayout(false);
             this.panelVisor.PerformLayout();
             this.panelKeyBoard.ResumeLayout(false);
+            this.panelLabelHolder.ResumeLayout(false);
+            this.panelLabelHolder.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -404,6 +419,7 @@
         private System.Windows.Forms.Button buttonFour;
         private System.Windows.Forms.TextBox textBoxMain;
         private System.Windows.Forms.Label labelHolder;
+        private System.Windows.Forms.Panel panelLabelHolder;
     }
 }
 

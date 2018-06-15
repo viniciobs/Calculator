@@ -118,6 +118,13 @@ namespace Calculator
 
         #region Operation Members Click
 
+        private void buttonSum_Click(object sender, EventArgs e)
+        {
+            lastClickedMember = (Button)sender;
+            UpdateLabelHolder();
+            ResetTextBoxMain();
+        }
+
         private void buttonSquirt_Click(object sender, EventArgs e)
         {
             lastClickedMember = (Button)sender;
@@ -201,6 +208,15 @@ namespace Calculator
                     textBoxMain.Text = textBoxMain.Text.Substring(0, textBoxMain.Text.Length - 1);
                     break;
             }
+        }
+
+        private void UpdateLabelHolder()
+        {
+            labelHolder.Text = string.Format("{0} {1} {2}",
+                    labelHolder.Text,
+                    textBoxMain.Text,
+                    lastClickedMember.Text
+                );
         }
 
         private void UpdateTextBoxMain(ActionType? actionType = null)
