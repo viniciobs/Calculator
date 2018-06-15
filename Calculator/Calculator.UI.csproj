@@ -79,6 +79,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Calculator.Controller\Calculator.Controller.csproj">
+      <Project>{ca8eaa86-2e8f-4095-af0b-16dda56e41c4}</Project>
+      <Name>Calculator.Controller</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CalculatorEntities\Calculator.Enums.csproj">
       <Project>{b16d2679-cb7c-44cf-affd-e6026dbe6369}</Project>
       <Name>Calculator.Enums</Name>

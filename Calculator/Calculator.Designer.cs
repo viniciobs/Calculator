@@ -87,6 +87,7 @@
             this.textBoxMain.TabIndex = 0;
             this.textBoxMain.Text = "0";
             this.textBoxMain.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxMain.TextChanged += new System.EventHandler(this.textBoxMain_TextChanged);
             // 
             // panelKeyBoard
             // 
@@ -329,6 +330,7 @@
             this.buttonSquirt.TabIndex = 2;
             this.buttonSquirt.Text = "√";
             this.buttonSquirt.UseVisualStyleBackColor = false;
+            this.buttonSquirt.Click += new System.EventHandler(this.buttonSquirt_Click);
             // 
             // buttonPercent
             // 
@@ -354,6 +356,7 @@
             this.buttonClear.TabIndex = 0;
             this.buttonClear.Text = "C";
             this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // FormMain
             // 

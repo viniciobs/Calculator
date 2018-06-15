@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.UI", "Calculator\Calculator.UI.csproj", "{C62525DD-9519-4C43-A79F-10C8BEABE8E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorEnums", "CalculatorEntities\CalculatorEnums.csproj", "{B16D2679-CB7C-44CF-AFFD-E6026DBE6369}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Enums", "CalculatorEntities\Calculator.Enums.csproj", "{B16D2679-CB7C-44CF-AFFD-E6026DBE6369}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Controller", "Calculator.Controller\Calculator.Controller.csproj", "{CA8EAA86-2E8F-4095-AF0B-16DDA56E41C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B16D2679-CB7C-44CF-AFFD-E6026DBE6369}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B16D2679-CB7C-44CF-AFFD-E6026DBE6369}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B16D2679-CB7C-44CF-AFFD-E6026DBE6369}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA8EAA86-2E8F-4095-AF0B-16DDA56E41C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA8EAA86-2E8F-4095-AF0B-16DDA56E41C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA8EAA86-2E8F-4095-AF0B-16DDA56E41C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA8EAA86-2E8F-4095-AF0B-16DDA56E41C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
