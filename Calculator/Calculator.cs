@@ -8,7 +8,7 @@ namespace Calculator
     #region Documentation
 
     /// <summary>
-    /// Formuláio principal contendo as funcionalidades da calculadora.
+    /// Formulário principal contendo as funcionalidades da calculadora.
     /// Nesse código, os botões da calculadora são chamados de membros.
     /// </summary>
 
@@ -187,11 +187,11 @@ namespace Calculator
                 return;
             }
 
-            var lastMemberCLickedType = Enum.IsDefined(typeof(OperationMembers), lastClickedMember.Text)
+            var lastMemberClickedType = Enum.IsDefined(typeof(OperationMembers), lastClickedMember.Text)
                 ? MemberType.Operation
                 : MemberType.Numeric;
 
-            switch (lastMemberCLickedType)
+            switch (lastMemberClickedType)
             {
                 case MemberType.Operation:
                     labelHolder.Text = labelHolder.Text.Substring(0, labelHolder.Text.Length - 1);

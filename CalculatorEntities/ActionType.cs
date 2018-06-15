@@ -13,7 +13,7 @@
         Reset = 1,
 
         /// <summary>
-        /// Concatenar o valor do último membro clicado á caixa de texto.
+        /// Concatenar o valor do último membro clicado à caixa de texto.
         /// </summary>
         Concat = 2,
 
