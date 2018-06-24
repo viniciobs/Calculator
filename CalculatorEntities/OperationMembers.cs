@@ -1,30 +1,55 @@
 ﻿namespace CalculatorEntities
 {
-    public enum OperationMembers
-    {
-        /// <summary>
-        /// Operação de adição.
-        /// </summary>
-        Sum = '+',
+	public enum OperationMembers
+	{
+		#region Documentation
 
-        /// <summary>
-        /// Operação de subtração.
-        /// </summary>
-        Subtract = '-',
+		/// <summary>
+		/// Operação de adição.
+		/// </summary>
 
-        /// <summary>
-        /// Operação de divisão.
-        /// </summary>
-        Divide = '÷',
+		#endregion Documentation
 
-        /// <summary>
-        /// Operação de multiplicação.
-        /// </summary>
-        Multiply = 'x',
+		Sum = '+',
 
-        /// <summary>
-        /// Operação de porcentagem.
-        /// </summary>
-        Percent = '%'
-    }
+		#region Documentation
+
+		/// <summary>
+		/// Operação de subtração.
+		/// </summary>
+
+		#endregion Documentation
+
+		Subtract = '-',
+
+		#region Documentation
+
+		/// <summary>
+		/// Operação de divisão.
+		/// </summary>
+
+		#endregion Documentation
+
+		Divide = '÷',
+
+		#region Documentation
+
+		/// <summary>
+		/// Operação de multiplicação.
+		/// </summary>
+
+		#endregion Documentation
+
+		Multiply = 'x',
+
+		#region Documentation
+
+		/// <summary>
+		/// Operação de porcentagem.
+		/// </summary>
+
+		#endregion Documentation
+
+		Percent = '%'
+	}
 }

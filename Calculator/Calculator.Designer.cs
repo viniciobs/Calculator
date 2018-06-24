@@ -72,11 +72,10 @@
             // 
             this.labelHolder.AutoSize = true;
             this.labelHolder.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelHolder.Location = new System.Drawing.Point(335, 0);
+            this.labelHolder.Location = new System.Drawing.Point(364, 0);
             this.labelHolder.Name = "labelHolder";
-            this.labelHolder.Size = new System.Drawing.Size(29, 13);
+            this.labelHolder.Size = new System.Drawing.Size(0, 13);
             this.labelHolder.TabIndex = 1;
-            this.labelHolder.Text = "label";
             this.labelHolder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBoxMain
