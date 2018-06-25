@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Calculator.Controller;
 using CalculatorEntities;
@@ -40,6 +42,18 @@ namespace Calculator
 
 		private bool isOperationFinished { get; set; }
 
+		#region Documentation
+
+		/// <summary>
+		/// Array contendo todos os membros de operação.
+		/// Seu valor é setado no construtor dessa classe.
+		/// Ele será usado para auxiliar o método HasOperationToCalculate() que é chamado com frequência nesse projeto.
+		/// </summary>
+
+		#endregion Documentation
+
+		private Char[] OperationTypes { get; set; }
+
 		#endregion Properties
 
 		#region Constructor
@@ -47,6 +61,8 @@ namespace Calculator
 		public FormMain()
 		{
 			isOperationFinished = false;
+
+			var teste = EnumHelper.EnumAsArray<char>(OperationMembers);
 
 			InitializeComponent();
 		}
@@ -120,6 +136,8 @@ namespace Calculator
 
 		private void buttonSum_Click(object sender, EventArgs e)
 		{
+			var teste = HasOperationToCalculate();
+
 			lastClickedMember = (Button)sender;
 			UpdateLabelHolder();
 			ResetTextBoxMain();
@@ -335,6 +353,14 @@ namespace Calculator
 		private void ResetLabelHolder()
 		{
 			labelHolder.Text = String.Empty;
+		}
+
+		private bool HasOperationToCalculate()
+		{
+			Regex regex = new Regex(@"[\d\.]*[+|-][\d\.]*");
+			Match match = regex.Match(labelHolder.Text);
+
+			return match.Success ? true : false;
 		}
 
 		#endregion Methods

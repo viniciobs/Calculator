@@ -40,8 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnumHelper.cs" />
     <Compile Include="MathSolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CalculatorEntities\Calculator.Enums.csproj">
+      <Project>{b16d2679-cb7c-44cf-affd-e6026dbe6369}</Project>
+      <Name>Calculator.Enums</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
