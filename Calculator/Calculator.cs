@@ -4,6 +4,8 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Calculator.Controller;
 using CalculatorEntities;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Calculator
 {
@@ -52,7 +54,7 @@ namespace Calculator
 
 		#endregion Documentation
 
-		private Char[] OperationTypes { get; set; }
+		private Char[] operationTypes { get; set; }
 
 		#endregion Properties
 
@@ -61,8 +63,7 @@ namespace Calculator
 		public FormMain()
 		{
 			isOperationFinished = false;
-
-			var teste = EnumHelper.EnumAsArray<char>(OperationMembers);
+			operationTypes = EnumHelper.GetValues<OperationMembers>();
 
 			InitializeComponent();
 		}
@@ -357,7 +358,16 @@ namespace Calculator
 
 		private bool HasOperationToCalculate()
 		{
-			Regex regex = new Regex(@"[\d\.]*[+|-][\d\.]*");
+			var regexDigits = "[\\d\\.]*";
+			var regexOperations = "[" + string.Join("|", operationTypes) + "]";
+
+			var regexBuilder = new StringBuilder();
+
+			regexBuilder.Append(regexDigits);
+			regexBuilder.Append(regexOperations);
+			regexBuilder.Append(regexDigits);
+
+			Regex regex = new Regex(regexBuilder.ToString());
 			Match match = regex.Match(labelHolder.Text);
 
 			return match.Success ? true : false;
