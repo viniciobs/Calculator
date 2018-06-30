@@ -157,17 +157,7 @@ namespace Calculator
 
 		private void buttonSquirt_Click(object sender, EventArgs e)
 		{
-			lastClickedMember = (Button)sender;
-			UpdateTextBoxMain();
-		}
-
-		private void buttonPercent_Click(object sender, EventArgs e)
-		{
-			lastClickedMember = (Button)sender;
-			UpdateTextBoxMain();
-			isOperationFinished = false;
-			UpdateTextBoxMain(ActionType.ShowResult);
-			isOperationFinished = true;
+			OperationMemberClick(sender);
 		}
 
 		#endregion Operation Members Click
@@ -403,6 +393,14 @@ namespace Calculator
 			var regexDigits = @"[\d\.]*";
 			var regexOperations = "[" + string.Join("|", operationTypes) + "]";
 
+			#region Comments
+
+			/// O símbolo da operação de subtração precisa ser um caractere de escape.
+
+			#endregion Comments
+
+			regexOperations = Regex.Replace(regexOperations, @"\-", @"\-");
+
 			var regexBuilder = new StringBuilder();
 
 			regexBuilder.Append(regexDigits);
@@ -412,7 +410,18 @@ namespace Calculator
 			Regex regex = new Regex(regexBuilder.ToString());
 			Match match = regex.Match(labelHolder.Text);
 
-			return match.Success ? true : false;
+			if (match.Success)
+			{
+				return true;
+			}
+			else
+			{
+				regexBuilder = new StringBuilder();
+				regexBuilder.Append(Convert.ToString((char)OperationMembers.Squirt));
+				regexBuilder.Append(regexDigits);
+			}
+
+			return false;
 		}
 
 		#endregion Methods

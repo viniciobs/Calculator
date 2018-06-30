@@ -358,7 +358,6 @@
 			this.buttonPercent.TabIndex = 1;
 			this.buttonPercent.Text = "%";
 			this.buttonPercent.UseVisualStyleBackColor = false;
-			this.buttonPercent.Click += new System.EventHandler(this.buttonPercent_Click);
 			// 
 			// buttonClear
 			// 

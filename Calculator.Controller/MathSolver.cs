@@ -14,8 +14,6 @@ namespace Calculator.Controller
 
 	public static class MathSolver
 	{
-		private static object MessageBox;
-
 		#region Methods
 
 		#region Documentation
