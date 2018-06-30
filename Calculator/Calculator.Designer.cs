@@ -228,6 +228,7 @@
 			this.buttonMultiply.TabIndex = 11;
 			this.buttonMultiply.Text = "x";
 			this.buttonMultiply.UseVisualStyleBackColor = false;
+			this.buttonMultiply.Click += new System.EventHandler(this.buttonMultiply_Click);
 			// 
 			// buttonNine
 			// 
@@ -279,6 +280,7 @@
 			this.buttonSubtract.TabIndex = 7;
 			this.buttonSubtract.Text = "-";
 			this.buttonSubtract.UseVisualStyleBackColor = false;
+			this.buttonSubtract.Click += new System.EventHandler(this.buttonSubtract_Click);
 			// 
 			// buttonSix
 			// 
@@ -330,6 +332,7 @@
 			this.buttonDivide.TabIndex = 3;
 			this.buttonDivide.Text = "÷";
 			this.buttonDivide.UseVisualStyleBackColor = false;
+			this.buttonDivide.Click += new System.EventHandler(this.buttonDivide_Click);
 			// 
 			// buttonSquirt
 			// 

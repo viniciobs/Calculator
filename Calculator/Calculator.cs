@@ -137,12 +137,22 @@ namespace Calculator
 
 		private void buttonSum_Click(object sender, EventArgs e)
 		{
-			var teste = HasOperationToCalculate();
+			OperationMemberClick(sender);
+		}
 
-			lastClickedMember = (Button)sender;
-			UpdateLabelHolder();
-			ResetTextBoxMain();
-			isOperationFinished = false;
+		private void buttonSubtract_Click(object sender, EventArgs e)
+		{
+			OperationMemberClick(sender);
+		}
+
+		private void buttonDivide_Click(object sender, EventArgs e)
+		{
+			OperationMemberClick(sender);
+		}
+
+		private void buttonMultiply_Click(object sender, EventArgs e)
+		{
+			OperationMemberClick(sender);
 		}
 
 		private void buttonSquirt_Click(object sender, EventArgs e)
@@ -200,6 +210,21 @@ namespace Calculator
 			isOperationFinished = false;
 		}
 
+		private void OperationMemberClick(object sender)
+		{
+			decimal? operationResult = null;
+
+			if (HasOperationToCalculate())
+			{
+				operationResult = MathSolver.Calculate(labelHolder.Text);
+			}
+
+			lastClickedMember = (Button)sender;
+			UpdateLabelHolder(operationResult);
+			ResetTextBoxMain();
+			isOperationFinished = false;
+		}
+
 		#region Documentation
 
 		/// <summary>
@@ -214,7 +239,12 @@ namespace Calculator
 
 		private void Clear()
 		{
-			if (lastClickedMember == null) return;
+			if (lastClickedMember == null)
+			{
+				ResetTextBoxMain();
+				ResetLabelHolder();
+				return;
+			}
 
 			if (IsTextBoxMainEmpty() || isOperationFinished)
 			{
@@ -235,6 +265,7 @@ namespace Calculator
 
 				case MemberType.Operation:
 					labelHolder.Text = labelHolder.Text.Substring(0, labelHolder.Text.Length - 1);
+					lastClickedMember = null;
 					break;
 
 				#region Comments
@@ -249,13 +280,23 @@ namespace Calculator
 			}
 		}
 
-		private void UpdateLabelHolder()
+		private void UpdateLabelHolder(decimal? updateValue = null)
 		{
-			labelHolder.Text = string.Format("{0} {1} {2}",
+			if (updateValue == null)
+			{
+				labelHolder.Text = string.Format("{0} {1} {2}",
 					labelHolder.Text,
 					textBoxMain.Text,
 					lastClickedMember.Text
 				);
+			}
+			else
+			{
+				labelHolder.Text = string.Format("{0} {1}",
+					updateValue.ToString(),
+					lastClickedMember.Text
+				);
+			}
 		}
 
 		private void UpdateTextBoxMain(ActionType? actionType = null)
@@ -280,7 +321,8 @@ namespace Calculator
 					break;
 
 				case ActionType.ShowResult:
-					textBoxMain.Text = MathSolver.Calculate(labelHolder.Text);
+					var operationResult = MathSolver.Calculate(labelHolder.Text);
+					textBoxMain.Text = operationResult.ToString();
 					break;
 			}
 		}
@@ -358,7 +400,7 @@ namespace Calculator
 
 		private bool HasOperationToCalculate()
 		{
-			var regexDigits = "[\\d\\.]*";
+			var regexDigits = @"[\d\.]*";
 			var regexOperations = "[" + string.Join("|", operationTypes) + "]";
 
 			var regexBuilder = new StringBuilder();

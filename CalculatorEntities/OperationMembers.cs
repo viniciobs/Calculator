@@ -50,6 +50,16 @@
 
 		#endregion Documentation
 
-		Percent = '%'
+		Percent = '%',
+
+		#region Documentation
+
+		/// <summary>
+		/// Operação de radiciação
+		/// </summary>
+
+		#endregion Documentation
+
+		Squirt = '√'
 	}
 }
