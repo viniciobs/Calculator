@@ -268,6 +268,8 @@ namespace Calculator
 					textBoxMain.Text = textBoxMain.Text.Substring(0, textBoxMain.Text.Length - 1);
 					break;
 			}
+
+			if (IsTextBoxMainEmpty()) lastClickedMember = null;
 		}
 
 		private void UpdateLabelHolder(decimal? updateValue = null)
@@ -419,6 +421,11 @@ namespace Calculator
 				regexBuilder = new StringBuilder();
 				regexBuilder.Append(Convert.ToString((char)OperationMembers.Squirt));
 				regexBuilder.Append(regexDigits);
+
+				regex = new Regex(regexBuilder.ToString());
+				match = regex.Match(labelHolder.Text);
+
+				if (match.Success) return true;
 			}
 
 			return false;
