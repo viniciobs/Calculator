@@ -1,11 +1,9 @@
-﻿using System;
+﻿using Calculator.Controller;
+using CalculatorEntities;
+using System;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using Calculator.Controller;
-using CalculatorEntities;
-using System.Linq;
-using System.Collections.Generic;
 
 namespace Calculator
 {
@@ -56,6 +54,8 @@ namespace Calculator
 
 		private Char[] operationTypes { get; set; }
 
+		private bool isTextChangeEnabled { get; set; }
+
 		#endregion Properties
 
 		#region Constructor
@@ -63,6 +63,7 @@ namespace Calculator
 		public FormMain()
 		{
 			isOperationFinished = false;
+			isTextChangeEnabled = true;
 			operationTypes = EnumHelper.GetValues<OperationMembers>();
 
 			InitializeComponent();
@@ -157,6 +158,10 @@ namespace Calculator
 
 		private void buttonSquirt_Click(object sender, EventArgs e)
 		{
+			isTextChangeEnabled = false;
+			textBoxMain.Text = String.Empty;
+			isTextChangeEnabled = true;
+
 			OperationMemberClick(sender);
 		}
 
@@ -167,9 +172,21 @@ namespace Calculator
 			Clear();
 		}
 
+		private void buttonEqual_Click(object sender, EventArgs e)
+		{
+			labelHolder.Text = String.Format("{0} {1}", labelHolder.Text, textBoxMain.Text);
+			if (HasOperationToCalculate())
+			{
+				var result = MathSolver.Calculate(labelHolder.Text);
+				textBoxMain.Text = result == null ? "Erro" : result.ToString();
+			}
+
+			isOperationFinished = true;
+		}
+
 		private void textBoxMain_TextChanged(object sender, EventArgs e)
 		{
-			if (IsTextBoxMainEmpty())
+			if (IsTextBoxMainEmpty() && isTextChangeEnabled)
 			{
 				ResetTextBoxMain();
 			}
@@ -193,6 +210,7 @@ namespace Calculator
 			if (isOperationFinished)
 			{
 				ResetTextBoxMain();
+				ResetLabelHolder();
 			}
 
 			lastClickedMember = (Button)sender;

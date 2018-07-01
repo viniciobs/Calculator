@@ -1,6 +1,8 @@
 ﻿using CalculatorEntities;
 using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace Calculator.Controller
 {
@@ -14,7 +16,33 @@ namespace Calculator.Controller
 
 	public static class MathSolver
 	{
+		#region Fileds
+
+		private static List<decimal> values = new List<decimal>();
+
+		#endregion Fileds
+
 		#region Methods
+
+		private static decimal Sum(List<decimal> values)
+		{
+			return values.Sum();
+		}
+
+		private static decimal Subtract(List<decimal> values)
+		{
+			return values[0] - values[1];
+		}
+
+		private static decimal Multiply(List<decimal> values)
+		{
+			return values[0] * values[1];
+		}
+
+		private static decimal Divide(List<decimal> values)
+		{
+			return values[0] / values[1];
+		}
 
 		#region Documentation
 
@@ -30,20 +58,43 @@ namespace Calculator.Controller
 
 		#endregion Documentation
 
-		private static double Squirt(Double value, Double pow = 2D)
+		private static decimal Squirt(List<decimal> values)
 		{
-			return Math.Pow(value, 1 / pow);
+			var pow = values.Count == 2 ? values[1] : 2;
+			var result = Math.Pow((double)values[0], 1 / (double)pow);
+			return (decimal)result;
 		}
-
-		#region Statics
 
 		public static decimal? Calculate(string Operation)
 		{
 			var operationType = GetTypeOf(Operation);
+			decimal? result = null;
+			SetValues(Operation);
 
-			if (operationType == null) return null;
+			switch (operationType)
+			{
+				case OperationMembers.Sum:
+					result = Sum(values);
+					break;
 
-			return 123M;
+				case OperationMembers.Subtract:
+					result = Subtract(values);
+					break;
+
+				case OperationMembers.Multiply:
+					result = Multiply(values);
+					break;
+
+				case OperationMembers.Divide:
+					result = Divide(values);
+					break;
+
+				case OperationMembers.Squirt:
+					result = (decimal)Squirt(values);
+					break;
+			}
+
+			return result;
 		}
 
 		#region Documentation
@@ -75,7 +126,21 @@ namespace Calculator.Controller
 			return null;
 		}
 
-		#endregion Statics
+		private static void SetValues(string Operation)
+		{
+			if (values.Any()) values.Clear();
+
+			var pattern = @"([\d\.]*)";
+			var matches = Regex.Matches(Operation, pattern);
+
+			foreach (Match match in matches)
+			{
+				if (match.ToString().Length > 0)
+				{
+					values.Add(Convert.ToDecimal(match.Value));
+				}
+			}
+		}
 
 		#endregion Methods
 	}
